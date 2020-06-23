@@ -22,13 +22,13 @@ class Login extends Component {
                 </FormGroup>
                 <Button className="btn-lg btn-dark btn-block">Log in</Button>
                 <div className="text-center pt-3">
-                    Albo kontynuuj przez FaceBook'a
+                    Or login with FaceBook
                 </div>
                 <FacebookLoginButton className="mt-3 mb-3"/>
                 <div className="text-center">
-                    <a href="/sign-up">Zarejestruj sie</a>
+                    <a href="/sign-up">Sign in</a>
                     <span className="p-2">|</span>
-                    <a href="/forgot-password">Zresetuj haslo</a>
+                    <a href="/forgot-password">Reset password</a>
                 </div>
             </Form>
         );

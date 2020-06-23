@@ -9,9 +9,9 @@ export default class MainPage extends Component {
             <div className="MainPage">
                 <div className="lander">
                     <h1>Rent Car</h1>
-                    <p>Wypozyczalnia samochodow dla firm i osob indywidualnych</p>
+                    <p>Car rental for businesses and individuals</p>
                     <form>
-                        <Button variant="btn btn-success" onClick={() => history.push('/Products')}>Click button to view products</Button>
+                        <Button variant="btn btn-success" onClick={() => history.push('/Car-Rental')}>Click button to view products</Button>
                     </form>
                 </div>
             </div>
