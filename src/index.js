@@ -5,7 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-import Navigation from './components/Navbar';
+import Navigation from './Components/Navbar';
 import Routes from './Routes';
 
 ReactDOM.render(

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Table, Button } from 'reactstrap';
+import ModalForm from './Modal'
 
 class DataTable extends Component {
 
@@ -27,13 +28,29 @@ class DataTable extends Component {
         return valTd
     }
 
+    showModal = () => {
+        this.setState({ show: true });
+    };
+
+    hideModal = () => {
+        this.setState({ show: false });
+    };
+
     render() {
+
         const items = this.props.items.map(item => {
+
             const values = this.getValues(item)
             return (
                 <tr key={values[0]}>
                     {this.putValsInTd(values)}
+                    <td>
+                        <div style={{ width: "110px" }}>
+                            <ModalForm buttonLabel="Check available cars" item={item} />
+                        </div>
+                    </td>
                 </tr>
+
             )
         })
 

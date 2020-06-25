@@ -1,26 +1,25 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Button } from 'reactstrap';
-import DataTable from './DataTable'
+import ModalForm from "./Modal";
 
-class DataManager extends Component {
+class CarAvailable extends Component {
 
     state = {
-
 
         items: []
     }
 
 
 
+
     getItems() {
-        fetch("https://placowki.herokuapp.com/places/all")
+        fetch("https://placowki.herokuapp.com/cars/available")
             //.then(res=>console.log(res.json()))
             .then(res => res.json())
             .then(items => this.setState({ items }))
             .catch(err => console.log(err))
 
     }
-
 
     addItemToState = (item) => {
         this.setState(prevState => ({
@@ -60,11 +59,16 @@ class DataManager extends Component {
                 </Row>
                 <Row>
                     <Col>
-                        <DataTable items={this.state.items}   updateState={this.updateState}  />
+                        <ModalForm items={this.state.items}   updateState={this.updateState}  />
                     </Col>
                 </Row>
+                {/*<Row>*/}
+                {/*    <Col>*/}
+                {/*        <ModalForm buttonLabel="Add Item"  />*/}
+                {/*    </Col>*/}
+                {/*</Row>*/}
             </Container>
         )
     }
 }
-export default DataManager
+export default CarAvailable
