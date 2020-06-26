@@ -6,9 +6,9 @@ import Contact from "./Contact/Contact";
 import DataManager from "./Components/DataManager";
 import Home from "./MainPage";
 import history from './history';
-import Login from "./Login/Login";
-import Signin from "./Login/Signin"
 import GoogleLogin from "./Login/GoogleLogin";
+import CarTable from "./Components/CarTable";
+import CarAvailable from "./Components/CarAvailable";
 
 export default class Routes extends Component {
     render() {
@@ -19,9 +19,8 @@ export default class Routes extends Component {
                     <Route path="/About" component={About} />
                     <Route path="/Contact" component={Contact} />
                     <Route path="/Car-Rental" component={DataManager} />
-                    {/*<Route path="/Login" component={Login}/>*/}
-                    {/*<Route path="/Login" component={Signin}/>*/}
                     <Route path="/Login" component={GoogleLogin}/>
+                    <Route path="/Place/:id" component={CarAvailable}/>
                 </Switch>
             </Router>
         )

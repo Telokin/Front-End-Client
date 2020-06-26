@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Button, Modal, ModalHeader, ModalBody, Table } from 'reactstrap'
+import DataManager from "./DataManager";
 import CarAvailable from "./CarAvailable";
+
 
 
 class ModalForm extends Component {
@@ -10,6 +12,14 @@ class ModalForm extends Component {
         this.state = {
             modal: false
         }
+    }
+
+    openModalWithItem(item) {
+        this.setState({
+            openDeleteModal: true,
+            activeItemName: item.name,
+            activeItemId: item.id
+        })
     }
 
     toggle = () => {
@@ -30,7 +40,7 @@ class ModalForm extends Component {
             button = <Button
                 color="primary"
                 onClick={this.toggle}
-                style={{float: "right",size:50, marginRight:"30px"}}>{label}
+                style={{float: "right",width: "150px"}}>{label}
             </Button>
             title = 'Cars Details'
         }

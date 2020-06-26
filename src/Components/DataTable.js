@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Table, Button } from 'reactstrap';
 import ModalForm from './Modal'
+import {Link} from "react-router-dom";
 
 class DataTable extends Component {
 
@@ -28,13 +29,7 @@ class DataTable extends Component {
         return valTd
     }
 
-    showModal = () => {
-        this.setState({ show: true });
-    };
 
-    hideModal = () => {
-        this.setState({ show: false });
-    };
 
     render() {
 
@@ -46,8 +41,11 @@ class DataTable extends Component {
                     {this.putValsInTd(values)}
                     <td>
                         <div style={{ width: "110px" }}>
+                            <Link to={'/Place/' + item.id} >
                             <ModalForm buttonLabel="Check available cars" item={item} />
-                        </div>
+                            </Link>
+                                                    </div>
+
                     </td>
                 </tr>
 
@@ -63,6 +61,7 @@ class DataTable extends Component {
                     <th>City</th>
                     <th>Street</th>
                     <th>Building Number</th>
+                    <th>Check cars in place</th>
                 </tr>
                 </thead>
                 <tbody>
